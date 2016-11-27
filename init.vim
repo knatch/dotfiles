@@ -22,7 +22,6 @@ call plug#begin('~/.config/nvim/plugged')
     " NERDTree
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-
     " typescripting
     Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -49,16 +48,22 @@ nmap <leader>l :set list!<CR>
 set showcmd                         " Show (partial) command in status line
 set relativenumber number           " Show line number on the left
 
-set tabstop=2                       
-set shiftwidth=2
-set expandtab
-set shiftround
-" set softtabstop=2
+set tabstop=2                       " Width of the tab character
+set shiftwidth=2                    " Amout of whitespace insert/remove in NORMAL mode
+" set expandtab                       " Use space instead of tab
+set softtabstop=2                   " Width of backspace
+" set shiftround                      
 set ruler
 set noswapfile
 set list listchars=tab:»·,trail:·,nbsp:·  " Set the list characters as shown
 
 set splitbelow splitright           " Open new split panes to right and bottom, which feels more natural
+
+
+" Customisations based on house-style (arbitrary)
+"  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+"  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+"  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
 " --------------------THEMES---------------------------
 set termguicolors

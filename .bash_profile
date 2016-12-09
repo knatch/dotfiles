@@ -10,7 +10,7 @@ export CLICOLOR=1
 
 # PS1="\w \[\033[01;32m\]$(parse_git_branch)\[\033[00m\] > "
 # export PS1="\w  > "
-alias ll='ls -la'
+# alias ll='ls -la'
 
 function parse_git_branch {
 git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

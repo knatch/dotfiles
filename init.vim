@@ -53,14 +53,15 @@ set relativenumber number           " Show line number on the left
 
 set tabstop=2                       " Width of the tab character
 set shiftwidth=2                    " Amout of whitespace insert/remove in NORMAL mode
-" set expandtab                       " Use space instead of tab
+set expandtab                       " Use space instead of tab
 set softtabstop=2                   " Width of backspace
-" set shiftround                      
+" set shiftround
 set ruler
 set noswapfile
-set list listchars=tab:»·,trail:·,nbsp:·  " Set the list characters as shown
+" set list listchars=tab:»·,trail:·,nbsp:·  " Set the list characters as shown
 
 set splitbelow splitright           " Open new split panes to right and bottom, which feels more natural
+set hidden													" Swich to the next buffer with change
 
 
 " Customisations based on house-style (arbitrary)

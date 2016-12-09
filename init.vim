@@ -32,8 +32,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Theme => neodark
     Plug 'KeitaNakamura/neodark.vim'
+
+    " SFTP plugin
+    Plug 'hesselbom/vim-hsftp'
   " }
-  
+
 call plug#end()
 " ---------------------CUSTOMIZATION---------------------
 " Hit <esc> to cancel search highlight

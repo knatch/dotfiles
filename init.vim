@@ -69,6 +69,13 @@ set hidden													" Swich to the next buffer with change
 "  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
 "  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 
+"  Markdown
+autocmd BufEnter *.md exe 'noremap <F5> :!open -a google\ chrome %:p<CR>'
+autocmd BufEnter *.html exe 'noremap <F5> :!open -a google\ chrome %:p<CR>'
+
+" Auto change working directory to the editing file
+ autocmd BufEnter * silent! lcd %:p:h
+
 " --------------------THEMES---------------------------
 set termguicolors
 syntax enable

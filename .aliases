@@ -1,0 +1,10 @@
+# list file with details
+alias ll="ls -la"
+
+alias v="nvim"
+alias vc="nvim ~/.config/nvim/init.vim"
+
+alias chrome="open -a google\ chrome"
+
+alias f="open -a Finder ."
+alias slack="open -a /Applications/Slack.app"

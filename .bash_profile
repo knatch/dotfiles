@@ -8,6 +8,9 @@ export PATH="$PATH:$HOME/.yarn/bin"
 
 export CLICOLOR=1
 
+# Source aliases
+source ~/aliases
+
 # PS1="\w \[\033[01;32m\]$(parse_git_branch)\[\033[00m\] > "
 # export PS1="\w  > "
 # alias ll='ls -la'

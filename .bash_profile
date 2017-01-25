@@ -9,11 +9,7 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export CLICOLOR=1
 
 # Source aliases
-source ~/aliases
-
-# PS1="\w \[\033[01;32m\]$(parse_git_branch)\[\033[00m\] > "
-# export PS1="\w  > "
-# alias ll='ls -la'
+source ~/.aliases
 
 function parse_git_branch {
 git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'

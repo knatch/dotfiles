@@ -11,6 +11,7 @@
 " Plugins {
   call plug#begin('~/.config/nvim/plugged')
 
+    Plug 'altercation/vim-colors-solarized'
     Plug 'KeitaNakamura/neodark.vim'
     Plug 'itchyny/lightline.vim'
     " sass/scss
@@ -27,7 +28,9 @@
 
 " Color & Themes {
 
+  syntax enable
   set termguicolors
+  
 
   let g:lightline = {}
   let g:lightline.colorscheme = 'neodark'

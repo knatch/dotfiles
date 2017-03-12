@@ -22,6 +22,8 @@
     " typescript 
     Plug 'Quramy/tsuquyomi', {'for' : 'typescript'}
     Plug 'HerringtonDarkholme/yats.vim'
+    " Vue
+    Plug 'posva/vim-vue', {'for' : 'vue'}
 
   call plug#end()
 " }
@@ -41,6 +43,8 @@
 " }
 
 " Customizations {
+filetype plugin on
+filetype indent on
 " show command on key bottom right
 set showcmd
 " show relative line number
@@ -51,6 +55,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+set smartindent
 
 " Horizontal split below current.
 set splitbelow
@@ -95,5 +101,9 @@ map <leader>et :tabe %%
 
   autocmd BufWinLeave ?* mkview
   autocmd BufWinEnter ?* silent loadview
+
+  " autocmd BufNewFile,BufRead *.sass set filetype=sass
+  autocmd BufNewFile,BufRead *.vue set filetype=vue
+  autocmd FileType sass setlocal expandtab shiftwidth=4 softtabstop=4
 
 " }

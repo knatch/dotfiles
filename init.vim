@@ -22,8 +22,13 @@
     " typescript 
     Plug 'Quramy/tsuquyomi', {'for' : 'typescript'}
     Plug 'HerringtonDarkholme/yats.vim'
+
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'mhartington/nvim-typescript', {'for' : 'typescript'}
     " Vue
     Plug 'posva/vim-vue', {'for' : 'vue'}
+    " Nerdtree
+    " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
   call plug#end()
 " }
@@ -32,13 +37,13 @@
 
   syntax enable
   set termguicolors
-  
+
+  let g:neodark#background = '#202020'
+  let g:neodark#use_256color = 1
+  colorscheme neodark
 
   let g:lightline = {}
   let g:lightline.colorscheme = 'neodark'
-
-  let g:neodark#background='black'
-  colorscheme neodark
 
 " }
 
@@ -79,6 +84,9 @@ if !&sidescrolloff
   set sidescrolloff=5
 endif
 
+" add - to key word
+set iskeyword+=-
+
 " <enter>/<shift-enter> to add a line in normal mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
@@ -95,6 +103,19 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
+map <leader>eew :e **/*
+map <leader>eev :vsp **/*
+map <leader>eet :tabe **/*
+
+" nerdtreetoggle
+" map <C-n> :NERDTreeToggle<CR>
+
+" Don't offer to open certain files/directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+set wildignore+=node_modules/*,bower_components/*
+
 " }
 
 " Tweaks {
@@ -104,6 +125,9 @@ map <leader>et :tabe %%
 
   " autocmd BufNewFile,BufRead *.sass set filetype=sass
   autocmd BufNewFile,BufRead *.vue set filetype=vue
-  autocmd FileType sass setlocal expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType sass,vue setlocal expandtab shiftwidth=4 softtabstop=4
+
+  " Enable deoplete at startup
+  let g:deoplete#enable_at_startup = 1
 
 " }

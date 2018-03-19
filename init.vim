@@ -1,49 +1,28 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" __  ___ .__   __.      ___   .___________.  ______  __    __    "
-" |  |/  / |  \ |  |     /   \  |           | /      ||  |  |  |  " 
-" |  '  /  |   \|  |    /  ^  \ `---|  |----`|  ,----'|  |__|  |  " 
-" |    <   |  . `  |   /  /_\  \    |  |     |  |     |   __   |  " 
-" |  .  \  |  |\   |  /  _____  \   |  |     |  `----.|  |  |  |  " 
-" |__|\__\ |__| \__| /__/     \__\  |__|      \______||__|  |__|  " 
-"                                                                 " 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                                                               
 " Plugins {
   call plug#begin('~/.config/nvim/plugged')
 
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'KeitaNakamura/neodark.vim'
     Plug 'itchyny/lightline.vim'
-    " sass/scss
-    Plug 'tpope/vim-haml', {'for' : 'sass'}
+    Plug 'edkolev/tmuxline.vim'
+    Plug 'tyrannicaltoucan/vim-quantum'
 
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'ervandew/supertab'
+
+    Plug 'ianks/vim-tsx'
     Plug 'hesselbom/vim-hsftp'
-    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-    " typescript 
-    Plug 'Quramy/tsuquyomi', {'for' : 'typescript'}
-    Plug 'HerringtonDarkholme/yats.vim'
 
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'mhartington/nvim-typescript', {'for' : 'typescript'}
-    " Vue
-    Plug 'posva/vim-vue', {'for' : 'vue'}
-    " Nerdtree
-    " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
 
   call plug#end()
 " }
 
 " Color & Themes {
-
   syntax enable
+
+  set background=dark
   set termguicolors
-
-  let g:neodark#background = '#202020'
-  let g:neodark#use_256color = 1
-  colorscheme neodark
-
-  let g:lightline = {}
-  let g:lightline.colorscheme = 'neodark'
+  colorscheme quantum
 
 " }
 
@@ -116,18 +95,8 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
 
-" }
+autocmd BufNewFile,BufRead *.tsx   set syntax=javascript.jsx
 
-" Tweaks {
-
-  autocmd BufWinLeave ?* mkview
-  autocmd BufWinEnter ?* silent loadview
-
-  " autocmd BufNewFile,BufRead *.sass set filetype=sass
-  autocmd BufNewFile,BufRead *.vue set filetype=vue
-  autocmd FileType sass,vue setlocal expandtab shiftwidth=4 softtabstop=4
-
-  " Enable deoplete at startup
-  let g:deoplete#enable_at_startup = 1
-
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 " }

@@ -1,0 +1,6 @@
+[core]
+	editor = nvim
+	excludesfile = /Users/natchiglu/.gitignore_global
+[user]
+	name = Natch Khongpasuk
+	email = natchynaat@gmail.com

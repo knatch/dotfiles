@@ -14,6 +14,8 @@
     Plug 'pangloss/vim-javascript'
     Plug 'mxw/vim-jsx'
 
+    Plug 'jremmen/vim-ripgrep'
+
   call plug#end()
 " }
 

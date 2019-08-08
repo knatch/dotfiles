@@ -15,6 +15,10 @@
     Plug 'mxw/vim-jsx'
 
     Plug 'jremmen/vim-ripgrep'
+    Plug 'posva/vim-vue'
+
+    " pug syntax
+    Plug 'digitaltoad/vim-pug'
 
   call plug#end()
 " }
@@ -24,6 +28,7 @@
 
   set background=dark
   set termguicolors
+  " colorscheme Tomorrow-Night-Eighties
   colorscheme quantum
 
 " }
@@ -44,10 +49,8 @@ set expandtab
 
 set smartindent
 
-" Horizontal split below current.
-set splitbelow
-" Vertical split to right of current.
-set splitright
+" Horizontal split below current. Vertical split to right of current.
+set splitbelow splitright
 
 set noswapfile
 
@@ -67,6 +70,9 @@ endif
 
 " add - to key word
 set iskeyword+=-
+
+" automatically remove all trailing whitespace before saving
+autocmd BufWritePre * %s/\s\+$//e
 
 " <enter>/<shift-enter> to add a line in normal mode
 nmap <S-Enter> O<Esc>
@@ -101,4 +107,8 @@ autocmd BufNewFile,BufRead *.tsx   set syntax=javascript.jsx
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 " }
